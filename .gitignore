@@ -1,0 +1,16 @@
+﻿# Arquivos temporários e de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Vercel local
+.vercel/
+
+# Editor
+.vscode/
+*.swp
+*.swo
