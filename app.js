@@ -1,4 +1,4 @@
-﻿﻿﻿﻿/* =========================================================
+﻿﻿﻿﻿﻿/* =========================================================
    Plantão Automotivo — PDP (Vonder LAV1300)
    Página única: nenhuma interação abre outra aba.
    ========================================================= */
@@ -39,7 +39,6 @@
   /* Galeria oficial Mercado Livre - Lavadora Vonder LAV1300 */
   const ML_LAV1300_GALLERY = [
     _im(P + 'vonder-lav1300-ml-1.jpg', 'Lavadora de alta pressao Vonder Leve LAV1300 amarela e preta 1200W - frente'),
-    _vid('https://http2.mlstatic.com/storage/shorts-api/videos-middleware/playlists/c9f6c7d8-e320-4918-8828-c98893f8f9fd/RjXLt2.m3u8', P + 'vonder-lav1300-ml-video-poster.jpg', 'Video demonstrativo oficial Lavadora Vonder LAV1300'),
     _im(P + 'vonder-lav1300-ml-2.jpg', 'Lavadora Vonder LAV1300 - acessorios inclusos'),
     _im(P + 'vonder-lav1300-ml-3.jpg', 'Lavadora Vonder LAV1300 - detalhes tecnicos'),
     _im(P + 'vonder-lav1300-ml-4.jpg', 'Lavadora Vonder LAV1300 - motor e especificacoes'),
