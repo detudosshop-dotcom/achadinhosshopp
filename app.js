@@ -1,4 +1,4 @@
-﻿﻿/* =========================================================
+﻿﻿﻿/* =========================================================
    Plantão Automotivo — PDP (Vonder LAV1300)
    Página única: nenhuma interação abre outra aba.
    ========================================================= */
@@ -627,6 +627,91 @@
     baseUrl: 'https://app.flevopay.com.br',
     apiKey:  'flevopay_sk_4d2f2349cd060b2eb9d2346923037759f1c3b617645417359fc96c8a80ea2429'
   };
+
+  /* ===== Utmify API Integration ===== */
+  const UTMIFY_TOKEN = 'Vl5kge1Rw315U0ZB8rdOdCiaEMpPM4J4HnxF';
+  let currentUtmifyOrder = null;
+
+  function getUtcDateString(d) {
+    const date = d || new Date();
+    const pad = n => String(n).padStart(2, '0');
+    return `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())} ${pad(date.getUTCHours())}:${pad(date.getUTCMinutes())}:${pad(date.getUTCSeconds())}`;
+  }
+
+  function getUtmifyTracking() {
+    const urlp = new URLSearchParams(location.search);
+    let utmsSalvas = {};
+    try { utmsSalvas = JSON.parse(localStorage.getItem('_ttk_utms') || '{}') || {}; } catch (_) {}
+    const g = k => {
+      const val = urlp.get(k) || utmsSalvas[k];
+      return val ? String(val) : null;
+    };
+    return {
+      src: g('src'),
+      sck: g('sck'),
+      utm_source: g('utm_source'),
+      utm_campaign: g('utm_campaign'),
+      utm_medium: g('utm_medium'),
+      utm_content: g('utm_content'),
+      utm_term: g('utm_term')
+    };
+  }
+
+  async function sendUtmifyNotification(orderData, status) {
+    try {
+      if (!orderData) return;
+      const isPaid = status === 'paid';
+      const nowUtc = getUtcDateString(new Date());
+      const payload = {
+        orderId: String(orderData.orderId),
+        platform: 'VonderStore',
+        paymentMethod: 'pix',
+        status: isPaid ? 'paid' : 'waiting_payment',
+        createdAt: orderData.createdAt || nowUtc,
+        approvedDate: isPaid ? nowUtc : null,
+        refundedAt: null,
+        customer: {
+          name: (orderData.customer && orderData.customer.name) || '',
+          email: (orderData.customer && orderData.customer.email) || '',
+          phone: onlyDigits((orderData.customer && orderData.customer.phone) || '') || null,
+          document: onlyDigits((orderData.customer && orderData.customer.document) || '') || null,
+          country: 'BR'
+        },
+        products: [
+          {
+            id: String(orderData.productId || 'VONDER_PROD'),
+            name: orderData.productName || 'Ferramenta Vonder',
+            planId: null,
+            planName: null,
+            quantity: Number(orderData.quantity || 1),
+            priceInCents: Math.round(Number(orderData.amountCents || 6500))
+          }
+        ],
+        trackingParameters: orderData.tracking || getUtmifyTracking(),
+        commission: {
+          totalPriceInCents: Math.round(Number(orderData.amountCents || 6500)),
+          gatewayFeeInCents: 0,
+          userCommissionInCents: Math.round(Number(orderData.amountCents || 6500))
+        },
+        isTest: false
+      };
+
+      fetch('https://api.utmify.com.br/api-credentials/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-token': UTMIFY_TOKEN
+        },
+        body: JSON.stringify(payload)
+      }).then(r => r.json()).then(res => {
+        console.log('Utmify notification (' + status + '):', res);
+      }).catch(err => {
+        console.warn('Utmify send error:', err);
+      });
+    } catch (e) {
+      console.warn('Utmify error:', e);
+    }
+  }
   let PRODUCT_NAME_FULL = PIX_CFG.productName || 'Lavadora de Alta Pressão Vonder Leve LAV1300';
 
   /* Monta a lista de itens do pedido (produto + extras + frete) no formato do backend */
@@ -1140,12 +1225,14 @@
         phone:    onlyDigits($('#fFone').value)
       };
       const reference = 'VND-' + Date.now() + '-' + Math.random().toString(36).slice(2,8).toUpperCase();
+      const utmTracking = getUtmifyTracking();
       const fpBody = {
         amount:      amountCents,
         description: PRODUCT_NAME_FULL,
         reference:   reference,
         source:      'api_externa',
-        customer:    customer
+        customer:    customer,
+        tracking:    utmTracking
       };
       const res = await fetch(FLEVO_PAY.baseUrl + '/api/v1/transaction', {
         method:  'POST',
@@ -1159,6 +1246,20 @@
       const pixCode = data.qr_code || '';
       const qrImg   = data.qr_code_base64 ||
         ('https://api.qrserver.com/v1/create-qr-code/?size=260x260&margin=0&data=' + encodeURIComponent(pixCode));
+
+      const createdUtc = getUtcDateString(new Date());
+      const currentProdId = (new URLSearchParams(location.search).get('id')) || '5';
+      currentUtmifyOrder = {
+        orderId: txid,
+        createdAt: createdUtc,
+        customer: customer,
+        amountCents: amountCents,
+        productName: PRODUCT_NAME_FULL,
+        productId: 'VONDER_' + currentProdId,
+        quantity: qty,
+        tracking: utmTracking
+      };
+
       try {
         localStorage.setItem('pdap-order-' + txid, JSON.stringify({
           id: txid, status: 'pending', amount_cents: amountCents,
@@ -1167,7 +1268,12 @@
         }));
         localStorage.setItem('pdap-customer', JSON.stringify(customer));
         localStorage.setItem('last_order_product', PRODUCT_NAME_FULL);
+        localStorage.setItem('utmify_pending_order', JSON.stringify(currentUtmifyOrder));
       } catch (_) {}
+
+      // Dispara notificacao de PIX PENDENTE (waiting_payment) para a Utmify
+      sendUtmifyNotification(currentUtmifyOrder, 'waiting_payment');
+
       return { txid: txid, pixCode: pixCode, qrCode: pixCode,
                base64QrCode: qrImg, purchaseEventId: 'order-' + txid };
     }
@@ -1388,6 +1494,17 @@
   function onPixPaid() {
     clearTimeout(comprovTimer);
     pararCronometro();
+
+    // Notifica a Utmify que o PIX foi PAGO (paid)
+    try {
+      let utmOrder = currentUtmifyOrder;
+      if (!utmOrder) {
+        utmOrder = JSON.parse(localStorage.getItem('utmify_pending_order') || 'null');
+      }
+      if (utmOrder) {
+        sendUtmifyNotification(utmOrder, 'paid');
+      }
+    } catch (_) {}
     // Pagou → não há mais PIX pendente pra retomar.
     try { localStorage.removeItem('pdap-pending'); } catch (_) {}
     const comprovEl = $('#choComprovante');
