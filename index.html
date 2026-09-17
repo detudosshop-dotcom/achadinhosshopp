@@ -1,4 +1,4 @@
-﻿﻿﻿<!DOCTYPE html>
+﻿﻿﻿﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -103,15 +103,15 @@
 #orderBumpModal{display:none;position:fixed;inset:0;z-index:8200;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.65);padding-top:max(24px, env(safe-area-inset-top));}
 @media(min-width:600px){#orderBumpModal{align-items:center;padding:20px;}}
 #orderBumpModal.is-open{display:flex;}
-.ob-box{background:#fff;border-radius:16px 16px 0 0;width:100%;max-width:480px;display:flex;flex-direction:column;max-height:78vh;max-height:78dvh;overflow:hidden;box-shadow:0 -4px 40px rgba(0,0,0,.22);position:relative;}
-@media(min-width:600px){.ob-box{border-radius:16px;max-height:82vh;}}
+.ob-box{background:#fff;border-radius:16px 16px 0 0;width:100%;max-width:480px;display:flex;flex-direction:column;max-height:82vh;max-height:82dvh;overflow:hidden;box-shadow:0 -4px 40px rgba(0,0,0,.22);position:relative;}
+@media(min-width:600px){.ob-box{border-radius:16px;max-height:84vh;}}
 .ob-head{background:#FFF000;padding:12px 40px 10px 16px;border-radius:16px 16px 0 0;text-align:center;flex:none;position:relative;}
 .ob-head h2{font-size:14px;font-weight:700;margin:0 0 2px;color:#000;display:flex;align-items:center;justify-content:center;gap:6px;}
 .ob-head p{font-size:11.5px;color:#333;margin:0;}
 .ob-head__close{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:18px;font-weight:700;color:#222;cursor:pointer;padding:6px 10px;line-height:1;}
-.ob-items{padding:10px 12px;display:flex;flex-direction:column;gap:8px;flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;}
+.ob-items{padding:10px 12px;display:flex;flex-direction:column;gap:8px;flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;}
 .ob-item{border:1.5px solid #e0e0e0;border-radius:10px;padding:8px 10px;cursor:pointer;transition:border-color .15s,background .15s;display:flex;gap:10px;align-items:center;}
-.ob-item:hover{border-color:#aaa;}
+.ob-item:hover{border-color:#bbb;}
 .ob-item.is-sel{border-color:#3483FA;background:#f0f4ff;}
 .ob-check{flex:none;width:20px;height:20px;border:2px solid #ccc;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .15s;color:transparent;}
 .ob-item.is-sel .ob-check{background:#3483FA;border-color:#3483FA;color:#fff;}
@@ -123,6 +123,17 @@
 .ob-item__img--cycle img:nth-of-type(3){animation-delay:4s;}
 @keyframes ob-cycle3{0%{opacity:0;transform:scale(1.04)}5%{opacity:1}30%{opacity:1;transform:scale(1)}35%{opacity:0}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.ob-item__img--cycle img{animation:none!important;}.ob-item__img--cycle img:first-of-type{opacity:1!important;}}
+.ob-item__body{flex:1;min-width:0;}
+.ob-item__name{font-size:12.5px;font-weight:600;color:#222;line-height:1.25;margin:0 0 2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.ob-item__price{font-size:15px;font-weight:700;color:#000;margin:0;}
+.ob-item__hint{font-size:11px;color:#3483FA;font-weight:600;margin:2px 0 0;}
+.ob-item.is-sel .ob-item__hint{color:#2968c8;}
+.ob-footer{padding:12px 14px max(14px, env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:8px;align-items:stretch;flex-shrink:0;background:#fff;border-top:1px solid #eee;}
+.ob-confirm{background:var(--blue,#3483FA);color:#fff;border:none;border-radius:6px;min-height:48px;padding:0 16px;font-size:16px;font-weight:600;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;transition:background .15s;}
+.ob-confirm:hover{background:#2968c8;}
+.ob-confirm:active{background:#22539F;}
+.ob-skip{background:rgba(65,137,230,.15);color:var(--blue,#3483FA);border:none;border-radius:6px;min-height:44px;padding:0 16px;font-size:15px;font-weight:600;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;transition:background .15s;}
+.ob-skip:hover{background:rgba(65,137,230,.25);}
 /* ── Back-redirect / Exit-intent offer ──────────────────────────── */
 #backOfferModal{display:none;position:fixed;inset:0;z-index:9800;align-items:center;justify-content:center;background:rgba(0,0,0,.72);padding:16px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 #backOfferModal.is-open{display:flex;}
