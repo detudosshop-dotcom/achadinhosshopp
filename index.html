@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -92,21 +92,22 @@
 .var-btn--img.is-sel{border-color:#3483FA;}
 .var-btn--img.is-sel span{color:#3483FA;}
 /* ── Order Bump ─────────────────────────────────────────────────── */
-#orderBumpModal{display:none;position:fixed;inset:0;z-index:8200;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.65);}
-@media(min-width:600px){#orderBumpModal{align-items:center;}}
+#orderBumpModal{display:none;position:fixed;inset:0;z-index:8200;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.65);padding-top:max(24px, env(safe-area-inset-top));}
+@media(min-width:600px){#orderBumpModal{align-items:center;padding:20px;}}
 #orderBumpModal.is-open{display:flex;}
-.ob-box{background:#fff;border-radius:16px 16px 0 0;width:100%;max-width:520px;padding:0 0 24px;max-height:94vh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;box-shadow:0 -4px 40px rgba(0,0,0,.22);}
-@media(min-width:600px){.ob-box{border-radius:16px;max-height:90vh;}}
-.ob-head{background:#FFF000;padding:18px 20px 14px;border-radius:16px 16px 0 0;text-align:center;}
-.ob-head h2{font-size:16px;font-weight:700;margin:0 0 3px;color:#000;}
-.ob-head p{font-size:13px;color:#333;margin:0;}
-.ob-items{padding:14px 14px 0;display:flex;flex-direction:column;gap:10px;}
-.ob-item{border:2px solid #e0e0e0;border-radius:12px;padding:12px;cursor:pointer;transition:border-color .15s,background .15s;display:flex;gap:12px;align-items:flex-start;}
+.ob-box{background:#fff;border-radius:16px 16px 0 0;width:100%;max-width:480px;display:flex;flex-direction:column;max-height:78vh;max-height:78dvh;overflow:hidden;box-shadow:0 -4px 40px rgba(0,0,0,.22);position:relative;}
+@media(min-width:600px){.ob-box{border-radius:16px;max-height:82vh;}}
+.ob-head{background:#FFF000;padding:12px 40px 10px 16px;border-radius:16px 16px 0 0;text-align:center;flex:none;position:relative;}
+.ob-head h2{font-size:14px;font-weight:700;margin:0 0 2px;color:#000;display:flex;align-items:center;justify-content:center;gap:6px;}
+.ob-head p{font-size:11.5px;color:#333;margin:0;}
+.ob-head__close{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:18px;font-weight:700;color:#222;cursor:pointer;padding:6px 10px;line-height:1;}
+.ob-items{padding:10px 12px;display:flex;flex-direction:column;gap:8px;flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;}
+.ob-item{border:1.5px solid #e0e0e0;border-radius:10px;padding:8px 10px;cursor:pointer;transition:border-color .15s,background .15s;display:flex;gap:10px;align-items:center;}
 .ob-item:hover{border-color:#aaa;}
 .ob-item.is-sel{border-color:#3483FA;background:#f0f4ff;}
-.ob-check{flex:none;width:22px;height:22px;border:2px solid #ccc;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .15s;color:transparent;}
+.ob-check{flex:none;width:20px;height:20px;border:2px solid #ccc;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .15s;color:transparent;}
 .ob-item.is-sel .ob-check{background:#3483FA;border-color:#3483FA;color:#fff;}
-.ob-item__img{flex:none;width:80px;height:80px;border-radius:8px;overflow:hidden;background:#f5f5f5;display:flex;align-items:center;justify-content:center;position:relative;}
+.ob-item__img{flex:none;width:52px;height:52px;border-radius:6px;overflow:hidden;background:#f5f5f5;display:flex;align-items:center;justify-content:center;position:relative;}
 .ob-item__img img{width:100%;height:100%;object-fit:contain;}
 .ob-item__img--cycle img{position:absolute;inset:0;opacity:0;animation:ob-cycle3 6s infinite;}
 .ob-item__img--cycle img:nth-of-type(1){animation-delay:0s;}
@@ -114,103 +115,6 @@
 .ob-item__img--cycle img:nth-of-type(3){animation-delay:4s;}
 @keyframes ob-cycle3{0%{opacity:0;transform:scale(1.04)}5%{opacity:1}30%{opacity:1;transform:scale(1)}35%{opacity:0}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.ob-item__img--cycle img{animation:none!important;}.ob-item__img--cycle img:first-of-type{opacity:1!important;}}
-/* ── Meli+ upsell modal ─────────────────────────────────────────── */
-#meliModal{display:none;position:fixed;inset:0;z-index:8600;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.68);overflow-y:auto;padding:0;}
-@media(min-width:600px){#meliModal{align-items:center;padding:16px;}}
-#meliModal.is-open{display:flex;}
-.meli-box{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:420px;overflow:hidden;max-height:96vh;box-shadow:0 -6px 40px rgba(0,0,0,.28);display:flex;flex-direction:column;animation:meli-pop .34s cubic-bezier(.2,.9,.3,1.25);}
-@media(min-width:600px){.meli-box{border-radius:20px;max-height:92vh;}}
-@keyframes meli-pop{from{transform:translateY(24px) scale(.96);opacity:0}to{transform:none;opacity:1}}
-.meli-scroll{overflow-y:auto;-webkit-overflow-scrolling:touch;}
-.meli-head{background:#fff;padding:22px 20px 10px;text-align:center;}
-.meli-logo{display:inline-block;height:36px;width:auto;}
-.meli-logo img{height:100%;width:auto;display:block;}
-.meli-head__eyebrow{font-size:11px;font-weight:800;color:#e91e63;letter-spacing:1.2px;margin:14px 0 6px;text-transform:uppercase;}
-.meli-head h2{font-size:20px;font-weight:800;margin:0 0 8px;color:#111;line-height:1.22;letter-spacing:-.2px;}
-.meli-head p{font-size:13.5px;color:#555;margin:0;line-height:1.4;}
-.meli-partners{margin:14px 20px 0;background:#fff5f9;border:1px solid #ffd0e2;border-radius:14px;padding:12px 10px;}
-.meli-partners__title{font-size:11px;font-weight:700;color:#e91e63;letter-spacing:1px;text-transform:uppercase;text-align:center;margin:0 0 8px;}
-.meli-partners__row{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;}
-.meli-partners__row img{height:36px;width:auto;display:block;object-fit:contain;border-radius:6px;}
-.meli-body{padding:16px 20px 4px;}
-.meli-benefits{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
-.meli-benefits li{display:flex;gap:10px;font-size:13.5px;color:#333;line-height:1.4;align-items:flex-start;}
-.meli-benefits li .meli-tick{flex:none;width:20px;height:20px;border-radius:50%;background:#e91e63;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;line-height:1;margin-top:1px;box-shadow:0 2px 6px rgba(233,30,99,.28);}
-.meli-benefits li b{color:#111;}
-/* Hero de 2 meses grátis */
-.meli-hero{margin:14px 20px 0;background:linear-gradient(135deg,#e91e63 0%,#c2185b 100%);border-radius:16px;padding:14px 16px;text-align:center;color:#fff;position:relative;overflow:hidden;box-shadow:0 8px 22px rgba(233,30,99,.28);}
-.meli-hero::before{content:"";position:absolute;top:-50px;right:-50px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 65%);pointer-events:none;}
-.meli-hero__badge{display:inline-block;background:#fff;color:#e91e63;font-size:10px;font-weight:900;padding:3px 10px;border-radius:20px;letter-spacing:1px;margin-bottom:6px;text-transform:uppercase;position:relative;}
-.meli-hero__title{font-size:22px;font-weight:900;margin:0;letter-spacing:-.5px;line-height:1.05;position:relative;}
-.meli-hero__title strong{font-size:32px;font-weight:900;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.15);}
-.meli-hero__sub{font-size:12px;font-weight:600;margin:4px 0 0;opacity:.95;position:relative;}
-/* Card de preço com ancoragem */
-.meli-highlight{margin:14px 20px 0;background:#fff5f9;border:2px dashed #e91e63;border-radius:14px;padding:14px 16px;position:relative;overflow:hidden;}
-.meli-highlight__row{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;}
-.meli-highlight__label{font-size:12px;color:#333;font-weight:600;line-height:1.35;flex:1;}
-.meli-highlight__label b{display:block;font-size:13.5px;color:#111;margin-bottom:2px;}
-.meli-highlight__prices{text-align:right;flex:none;line-height:1;}
-.meli-highlight__old{font-size:14px;color:#999;text-decoration:line-through;font-weight:700;display:block;margin-bottom:2px;}
-.meli-highlight__new{font-size:28px;font-weight:900;color:#e91e63;letter-spacing:-.5px;display:block;}
-.meli-highlight__off{display:inline-block;background:#e91e63;color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:12px;margin-top:4px;letter-spacing:.4px;}
-.meli-foot{padding:16px 20px 22px;display:flex;flex-direction:column;gap:10px;background:#fff;}
-.meli-cta{position:relative;overflow:hidden;background:#e91e63;color:#fff;border:none;border-radius:12px;padding:16px;font-size:15px;font-weight:800;cursor:pointer;width:100%;box-shadow:0 6px 20px rgba(233,30,99,.35);letter-spacing:.2px;transition:transform .12s, box-shadow .12s;}
-.meli-cta:hover{background:#d81b60;transform:translateY(-1px);box-shadow:0 8px 24px rgba(233,30,99,.42);}
-.meli-cta:active{transform:translateY(0);}
-.meli-cta::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:meli-shine 2.8s ease-in-out infinite;pointer-events:none;}
-@keyframes meli-shine{0%{left:-70%}55%,100%{left:135%}}
-.meli-skip{background:none;border:none;color:#888;font-size:13px;cursor:pointer;padding:6px;text-align:center;}
-.meli-skip:hover{color:#555;text-decoration:underline;}
-@media(prefers-reduced-motion:reduce){.meli-cta::after,.meli-box{animation:none!important;}}
-/* Badge de frete grátis ativado pelo meli+ */
-.meli-ship-badge{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#fff5f9 0%,#ffe4ee 100%);border:1.5px solid #e91e63;border-radius:12px;padding:12px 14px;margin-top:12px;box-shadow:0 4px 14px rgba(233,30,99,.18);animation:meli-badge-in .35s cubic-bezier(.2,.9,.3,1.25);}
-@keyframes meli-badge-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-.meli-ship-badge__logo{flex:none;height:22px;}
-.meli-ship-badge__logo img{height:100%;width:auto;display:block;}
-.meli-ship-badge__text{flex:1;min-width:0;line-height:1.25;}
-.meli-ship-badge__text b{display:block;font-size:13px;color:#111;font-weight:800;}
-.meli-ship-badge__text small{font-size:11.5px;color:#555;}
-.meli-ship-badge__check{flex:none;color:#e91e63;}
-/* Frete opaco quando meli+ ativado */
-.ship-opts.is-meli-locked{opacity:.45;pointer-events:none;filter:grayscale(.2);}
-/* ── Tela de compra confirmada (PIX pago) ─────────────────────── */
-.cho-paid{position:absolute;inset:0;background:#f5f5f5;z-index:250;display:flex;flex-direction:column;overflow:hidden;}
-.cho-paid__scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:20px 18px 24px;}
-.cho-paid__eta{font-size:13px;color:#666;margin:0 0 4px;}
-.cho-paid__eta b{color:#111;font-weight:700;}
-.cho-paid__hero{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:20px;}
-.cho-paid__title{font-size:22px;font-weight:700;color:#111;line-height:1.22;margin:0;flex:1;}
-.cho-paid__thumb{flex:none;width:72px;height:72px;border-radius:6px;overflow:hidden;background:#fff;border:1px solid #e0e0e0;display:flex;align-items:center;justify-content:center;padding:4px;box-sizing:border-box;}
-.cho-paid__thumb img{width:100%;height:100%;object-fit:contain;}
-.cho-paid__progress{display:flex;align-items:center;gap:0;margin-bottom:22px;padding:0 4px;}
-.cho-paid__step{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid #d0d0d0;background:#fff;display:flex;align-items:center;justify-content:center;color:#fff;transition:all .2s;}
-.cho-paid__step.is-done{background:#111;border-color:#111;}
-.cho-paid__step.is-current{background:#111;border-color:#111;}
-.cho-paid__step svg{width:14px;height:14px;}
-.cho-paid__bar{flex:1;height:3px;background:#d0d0d0;position:relative;}
-.cho-paid__bar.is-done{background:#111;}
-.cho-paid__section-link{font-size:14px;color:var(--blue,#3483FA);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-bottom:22px;}
-.cho-paid__card{background:#fff;border-radius:10px;padding:0;margin-bottom:12px;overflow:hidden;}
-.cho-paid__card-title{font-size:15px;font-weight:700;color:#111;padding:14px 16px 10px;margin:0;}
-.cho-paid__row{display:flex;gap:12px;align-items:center;padding:12px 16px;border-top:1px solid #f0f0f0;text-decoration:none;color:#111;}
-.cho-paid__row:first-of-type{border-top:none;}
-.cho-paid__row-ic{flex:none;width:36px;height:36px;border-radius:6px;border:1px solid #e0e0e0;display:flex;align-items:center;justify-content:center;color:#333;background:#fff;}
-.cho-paid__row-thumb{flex:none;width:44px;height:44px;border-radius:6px;overflow:hidden;background:#fff;border:1px solid #e0e0e0;padding:3px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;}
-.cho-paid__row-thumb img{width:100%;height:100%;object-fit:contain;}
-.cho-paid__row-body{flex:1;min-width:0;line-height:1.35;}
-.cho-paid__row-body b{display:block;font-size:14px;font-weight:600;color:#111;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.cho-paid__row-body small{font-size:12.5px;color:#666;}
-.cho-paid__row-arrow{flex:none;color:#999;}
-@media(prefers-reduced-motion:reduce){.meli-ship-badge{animation:none!important;}}
-.ob-item__body{flex:1;min-width:0;}
-.ob-item__name{font-size:13px;font-weight:600;color:#333;line-height:1.3;margin:0 0 6px;}
-.ob-item__price{font-size:19px;font-weight:700;color:#000;margin:0 0 3px;}
-.ob-item__hint{font-size:12px;color:#3483FA;font-weight:600;margin:0;}
-.ob-item.is-sel .ob-item__hint{color:#2968c8;}
-.ob-footer{padding:14px 14px 0;display:flex;flex-direction:column;gap:8px;align-items:stretch;}
-.ob-confirm{background:#3483FA;color:#fff;border:none;border-radius:10px;padding:15px;font-size:16px;font-weight:700;cursor:pointer;width:100%;}
-.ob-confirm:hover{background:#2968c8;}
-.ob-skip{background:none;border:none;color:#888;font-size:13px;cursor:pointer;text-decoration:underline;padding:4px;align-self:center;}
 /* ── Back-redirect / Exit-intent offer ──────────────────────────── */
 #backOfferModal{display:none;position:fixed;inset:0;z-index:9800;align-items:center;justify-content:center;background:rgba(0,0,0,.72);padding:16px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 #backOfferModal.is-open{display:flex;}
@@ -1546,6 +1450,7 @@ Distribuído por Plantão Automotivo — distribuidor autorizado Vonder.</div>
 <div id="orderBumpModal" role="dialog" aria-modal="true" aria-labelledby="ob-title">
   <div class="ob-box">
     <div class="ob-head">
+      <button class="ob-head__close" type="button" id="obClose" aria-label="Fechar">✕</button>
       <h2 id="ob-title"><svg class="ob-ico" aria-hidden="true" focusable="false"><use href="#i-bolt"/></svg>Oferta especial antes de finalizar!</h2>
       <p>Adicione ao seu pedido com frete grátis incluso</p>
     </div>
