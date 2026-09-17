@@ -1,4 +1,4 @@
-﻿﻿﻿/* =========================================================
+﻿﻿﻿﻿/* =========================================================
    Plantão Automotivo — PDP (Vonder LAV1300)
    Página única: nenhuma interação abre outra aba.
    ========================================================= */
@@ -36,21 +36,24 @@
   const PF = 'assets/reviews/shopee/';
 
   /* Galeria principal — Lavadora Vonder LAV1300 (127V) */
-  const GAL_127V = [
-    _im(P + 'vonder-lavadora-lav1300.webp', 'Lavadora Vonder LAV1300 — frente'),
-    _im(PF + 'p1_1.webp', 'Lavadora Vonder em uso — cliente 1'),
-    _im(PF + 'p2_1.webp', 'Lavadora Vonder — detalhe cliente 2'),
-    _im(PF + 'p3_1.webp', 'Lavadora Vonder — cliente 3'),
-    _im(PF + 'p4_1.webp', 'Lavadora Vonder — cliente 4')
-  ];
-  const GAL_220V = [
-    _im(P + 'vonder-lavadora-lav1300.webp', 'Lavadora Vonder LAV1300 220V — frente'),
-    _im(PF + 'p1_3.webp', 'Lavadora Vonder 220V em uso — cliente 1'),
-    _im(PF + 'p2_2.webp', 'Lavadora Vonder 220V — cliente 2'),
-    _im(PF + 'p4_2.webp', 'Lavadora Vonder 220V — cliente 4')
+  /* Galeria oficial Mercado Livre - Lavadora Vonder LAV1300 */
+  const ML_LAV1300_GALLERY = [
+    _im(P + 'vonder-lav1300-ml-1.jpg', 'Lavadora de alta pressao Vonder Leve LAV1300 amarela e preta 1200W - frente'),
+    _vid('https://http2.mlstatic.com/storage/shorts-api/videos-middleware/playlists/c9f6c7d8-e320-4918-8828-c98893f8f9fd/RjXLt2.m3u8', P + 'vonder-lav1300-ml-video-poster.jpg', 'Video demonstrativo oficial Lavadora Vonder LAV1300'),
+    _im(P + 'vonder-lav1300-ml-2.jpg', 'Lavadora Vonder LAV1300 - acessorios inclusos'),
+    _im(P + 'vonder-lav1300-ml-3.jpg', 'Lavadora Vonder LAV1300 - detalhes tecnicos'),
+    _im(P + 'vonder-lav1300-ml-4.jpg', 'Lavadora Vonder LAV1300 - motor e especificacoes'),
+    _im(P + 'vonder-lav1300-ml-5.jpg', 'Lavadora Vonder LAV1300 - vista lateral'),
+    _im(P + 'vonder-lav1300-ml-6.jpg', 'Lavadora Vonder LAV1300 - mangueira e pistola'),
+    _im(P + 'vonder-lav1300-ml-7.jpg', 'Lavadora Vonder LAV1300 - dimensoes e peso'),
+    _im(P + 'vonder-lav1300-ml-8.jpg', 'Lavadora Vonder LAV1300 - em uso limpeza'),
+    _im(P + 'vonder-lav1300-ml-9.jpg', 'Lavadora Vonder LAV1300 - embalagem original')
   ];
 
-  /* 127V é a voltagem pré-selecionada → galeria padrão. */
+  const GAL_127V = ML_LAV1300_GALLERY;
+  const GAL_220V = ML_LAV1300_GALLERY;
+
+  /* 127V e 220V usam a galeria oficial completa */
   const GALLERY = GAL_127V;
   let COLOR_GALLERIES = { '127V': GAL_127V, '220V': GAL_220V };
   let activeGallery = GALLERY;
@@ -195,6 +198,7 @@
 
   /* Galeria de fotos do produto (carousel principal) - min 4 fotos cada */
   var PRODUCT_GALLERY = {
+    5:  ML_LAV1300_GALLERY,
     8:  [_im(_PP+"vonder-kit-ferramentas-128.webp","Kit 128 pecas"),_im(_PP+"vonder-kit-ferramentas-128-a.jpg","Kit 128 vista 2"),_im(_PP+"vonder-kit-ferramentas-128-b.jpg","Kit 128 vista 3"),_im(_PP+"vonder-kit-ferramentas-128-c.jpg","Kit 128 conteudo")],
     12: [_im(_PP+"vonder-kit-ferramentas-163.webp","Kit 163 pecas"),_im(_PP+"vonder-kit-ferramentas-163-b.jpg","Kit 163 vista 2"),_im(_PP+"vonder-kit-ferramentas-163-d.webp","Kit 163 detalhe"),_im(_PP+"vonder-kit-ferramentas-163-b.jpg","Kit 163 conteudo")],
     1:  [_im(_PP+"vonder-esmerilhadeira-eav860.webp","EAV860 frente"),_im(_PP+"vonder-esmerilhadeira-eav860-a.jpg","EAV860 vista 2"),_im(_PP+"vonder-esmerilhadeira-eav860-c.jpg","EAV860 vista 3"),_im(_PP+"vonder-esmerilhadeira-eav860-d.jpg","EAV860 em uso")],
