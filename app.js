@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿/* =========================================================
+﻿﻿﻿﻿﻿﻿﻿﻿﻿/* =========================================================
    Plantão Automotivo — PDP (Vonder LAV1300)
    Página única: nenhuma interação abre outra aba.
    ========================================================= */
@@ -79,7 +79,8 @@
     P + 'vonder-trena-5m.webp',                  // 15
     P + 'vonder-chave-allen.webp',               // 16
     P + 'vonder-chave-catraca.webp',             // 17
-    P + 'vonder-lavadora-lav1300.webp'           // 18 — produto principal
+    P + 'vonder-lavadora-lav1300.webp',          // 18 - produto principal
+    P + 'mondial-airfryer-oven-12l-1.jpg'        // 19 - Fritadeira Air Fryer Mondial 12L
   ];
 
   /* Card do PRODUTO PRINCIPAL (LAV1300).
@@ -94,6 +95,7 @@
 
   // Catálogo 1:1 com o zip inicial (nomes, preços e "de/por" exatos).
   const RELATED = [
+    { img: 19, id: 20,  t: 'Fritadeira Air Fryer Forno Oven 12L Mondial AFON-12L-BIN Digital', p: '149,00', old: '822,90', off: '82% OFF', sold: '+5mil vendidos', ship: 1, full: 1 },
     { img: 1, id: 14,  t: 'Lavadora De Alta Pressão 1200W 1300 Libras LAV1200 Vonder', p: '60,00', old: '280,00', off: '79% OFF', sold: '+200 vendidos', ship: 1 },
     { img: 2, id: 15,  t: 'Lavadora De Alta Pressão Vonder 1400W LAV 1600 Amarelo', p: '70,00', old: '245,00', off: '71% OFF', sold: '+15mil vendidos', ship: 1 },
     { img: 3, id: 16,  t: 'Lavadora De Alta Pressão LAV 2000 Vonder Cor Amarelo', p: '100,00', old: '358,00', off: '72% OFF', sold: '+1k vendidos', pix: 1, ship: 1 },
@@ -108,6 +110,7 @@
     { img: 12, id: 13, t: 'Serra Mármore Profissional Vonder SMV1300s 1300W', p: '60,00', old: '198,00', off: '70% OFF', sold: '+8k vendidos', ship: 1, full: 1 }
   ];
   const STORE = [
+    { img: 19, id: 20,  t: 'Fritadeira Air Fryer Forno Oven 12L Mondial AFON-12L-BIN Digital', p: '149,00', old: '822,90', off: '82% OFF', sold: '+5mil vendidos', ship: 1, full: 1 },
     { img: 4, id: 17,  t: 'Kit Lavadora Alta Pressão 1200W + Aspirador Pó e Água Vonder', p: '120,00', old: '400,00', off: '70% OFF', sold: '+500 vendidos', pix: 1, ship: 1 },
     { img: 3, id: 16,  t: 'Lavadora De Alta Pressão LAV 2000 Vonder Cor Amarelo', p: '100,00', old: '358,00', off: '72% OFF', sold: '+1k vendidos', ship: 1 },
     { img: 8, id: 2,  t: 'Inversor Para Solda Eletrodo e TIG IM125 Vonder', p: '78,00', old: '399,00', off: '80% OFF', sold: '+770 vendidos', ship: 1 },
@@ -176,6 +179,13 @@
   let currentReviewMedia = REVIEW_MEDIA;
 
   var PRODUCT_REVIEWS = {
+    20: [
+      { rate: 5, country: "Brasil", when: "Ha 2 semanas", ageDays: 14, likes: 42, text: "Simplesmente perfeita! Muito espaçosa, cabe um frango inteiro ou forma de bolo com tranquilidade. O painel digital facilita demais e os alimentos ficam crocantes por fora e macios por dentro sem uma gota de óleo." },
+      { rate: 5, country: "Brasil", when: "Ha 3 semanas", ageDays: 21, likes: 28, text: "Excelente aquisição para a casa. Os três andares permitem fazer carne, batata e legumes de uma vez só. O visor com luz interna ajuda a acompanhar sem precisar abrir e perder calor." },
+      { rate: 5, country: "Brasil", when: "Ha 1 mes", ageDays: 30, likes: 19, text: "Potência fantástica, aquece super rápido e é muito fácil de limpar graças ao antiaderente das bandejas. Chegou rápido e muito bem embalada." },
+      { rate: 5, country: "Brasil", when: "Ha 1 mes", ageDays: 35, likes: 15, text: "Adorei! Substituiu meu forno convencional e a air fryer pequena. Muito prática, bonita e moderna com acabamento em inox." },
+      { rate: 5, country: "Brasil", when: "Ha 2 meses", ageDays: 60, likes: 11, text: "Melhor custo-benefício disparado. As funções pré-programadas do painel touchscreen acertam o ponto certinho de cada alimento." }
+    ],
     14:[{rate:5,country:"Brasil",when:"Ha 1 mes",ageDays:30,likes:312,text:"Chegou em perfeito estado. A pressao e otima para lavar carro e calcada. Custo-beneficio excelente!"},{rate:5,country:"Brasil",when:"Ha 2 meses",ageDays:60,likes:198,text:"Super potente! Limpei o quintal em 30 minutos. Facil de montar e usar. Recomendo muito!"},{rate:5,country:"Brasil",when:"Ha 3 meses",ageDays:90,likes:145,text:"Entrega rapida, produto de qualidade. Motor silencioso e pressao constante. Vonder e confiavel."},{rate:4,country:"Brasil",when:"Ha 4 meses",ageDays:120,likes:87,text:"Muito bom! So achei a mangueira curta, mas o produto e excelente. Vale a pena."},{rate:5,country:"Brasil",when:"Ha 5 meses",ageDays:150,likes:203,text:"Lavou meu carro, moto e calcada. Muito satisfeito. Produto identico a descricao."},{rate:5,country:"Brasil",when:"Ha 6 meses",ageDays:180,likes:167,text:"Perfeito! Funcionou na primeira ligada. Qualidade Vonder garantida!"}],
     15:[{rate:5,country:"Brasil",when:"Ha 1 mes",ageDays:25,likes:820,text:"A LAV1600 e incrivel! Pressao absurda, limpou a fachada inteira. Motor potente e silencioso."},{rate:5,country:"Brasil",when:"Ha 2 meses",ageDays:55,likes:634,text:"Produto fantastico. A mangueira de 5 metros faz toda a diferenca. Vonder nunca decepciona!"},{rate:5,country:"Brasil",when:"Ha 3 meses",ageDays:85,likes:491,text:"Ja testei outras marcas e essa e a melhor. Pressao uniforme, gatilho confortavel."},{rate:4,country:"Brasil",when:"Ha 4 meses",ageDays:115,likes:302,text:"Excelente produto! So melhoraria o cabo de forca. Pressao e funcionamento sao impecaveis."},{rate:5,country:"Brasil",when:"Ha 5 meses",ageDays:145,likes:578,text:"Comprei para lavar tratores na fazenda. Perfeito para uso intenso. Super recomendo!"},{rate:5,country:"Brasil",when:"Ha 6 meses",ageDays:175,likes:423,text:"Melhor lavadora que ja comprei. Dois anos de uso e nenhum problema. Vonder e top!"}],
     16:[{rate:5,country:"Brasil",when:"Ha 1 mes",ageDays:20,likes:445,text:"A LAV2000 e um monstro! Tirou tinta velha e removeu mofo da calcada. Qualidade premium!"},{rate:5,country:"Brasil",when:"Ha 2 meses",ageDays:50,likes:367,text:"Bomba de aluminio faz toda diferenca. Produto robusto para uso intenso. Vonder sabe o que faz!"},{rate:4,country:"Brasil",when:"Ha 3 meses",ageDays:80,likes:189,text:"Otimo produto, muito potente. Esquenta um pouco apos uso prolongado, normal em lavadoras profissionais."},{rate:5,country:"Brasil",when:"Ha 4 meses",ageDays:110,likes:298,text:"Uso diario em oficina mecanica. Aguentou muito bem. Motor potente e duravel."},{rate:5,country:"Brasil",when:"Ha 5 meses",ageDays:140,likes:412,text:"Lavei fachada, telhado e patio. Potencia incrivel. Chegou bem embalado e antes do prazo!"}],
@@ -197,6 +207,17 @@
 
   /* Galeria de fotos do produto (carousel principal) - min 4 fotos cada */
   var PRODUCT_GALLERY = {
+    20: [
+      _im(_PP + 'mondial-airfryer-oven-12l-1.jpg', 'Fritadeira Air Fryer Forno Oven 12L Mondial - frente'),
+      _im(_PP + 'mondial-airfryer-oven-12l-2.jpg', 'Fritadeira Air Fryer Forno Oven 12L Mondial - acessórios inclusos'),
+      _im(_PP + 'mondial-airfryer-oven-12l-3.jpg', 'Fritadeira Air Fryer Forno Oven 12L Mondial - painel digital 10 funções'),
+      _im(_PP + 'mondial-airfryer-oven-12l-4.jpg', 'Fritadeira Air Fryer Forno Oven 12L Mondial - 3 níveis de altura'),
+      _im(_PP + 'mondial-airfryer-oven-12l-5.jpg', 'Fritadeira Air Fryer Forno Oven 12L Mondial - visor e luz interna'),
+      _im(_PP + 'mondial-airfryer-oven-12l-6.jpg', 'Fritadeira Air Fryer Forno Oven 12L Mondial - capacidade 12 litros'),
+      _im(_PP + 'mondial-airfryer-oven-12l-7.jpg', 'Fritadeira Air Fryer Forno Oven 12L Mondial - receitas simultâneas'),
+      _im(_PP + 'mondial-airfryer-oven-12l-8.jpg', 'Fritadeira Air Fryer Forno Oven 12L Mondial - cesto antiaderente'),
+      _im(_PP + 'mondial-airfryer-oven-12l-9.jpg', 'Fritadeira Air Fryer Forno Oven 12L Mondial - visão geral')
+    ],
     5:  ML_LAV1300_GALLERY,
     8:  [_im(_PP+"vonder-kit-ferramentas-128.webp","Kit 128 pecas"),_im(_PP+"vonder-kit-ferramentas-128-a.jpg","Kit 128 vista 2"),_im(_PP+"vonder-kit-ferramentas-128-b.jpg","Kit 128 vista 3"),_im(_PP+"vonder-kit-ferramentas-128-c.jpg","Kit 128 conteudo")],
     12: [_im(_PP+"vonder-kit-ferramentas-163.webp","Kit 163 pecas"),_im(_PP+"vonder-kit-ferramentas-163-b.jpg","Kit 163 vista 2"),_im(_PP+"vonder-kit-ferramentas-163-d.webp","Kit 163 detalhe"),_im(_PP+"vonder-kit-ferramentas-163-b.jpg","Kit 163 conteudo")],
@@ -210,6 +231,12 @@
 
   /* Review media: lavadoras usam fotos reais de clientes; outros usam foto do produto */
   var PRODUCT_REVIEW_MEDIA = {
+    20: [
+      _ri(_PP + 'mondial-airfryer-oven-12l-1.jpg'),
+      _ri(_PP + 'mondial-airfryer-oven-12l-2.jpg'),
+      _ri(_PP + 'mondial-airfryer-oven-12l-3.jpg'),
+      _ri(_PP + 'mondial-airfryer-oven-12l-4.jpg')
+    ],
     14:[_ri(_PFS+"p1_1.webp"),_ri(_PFS+"p2_1.webp"),_ri(_PFS+"p3_1.webp"),_ri(_PFS+"p4_1.webp")],
     15:[_ri(_PFS+"p1_3.webp"),_ri(_PFS+"p2_2.webp"),_ri(_PFS+"p4_2.webp"),_ri(_PFS+"p4_3.webp")],
     16:[_ri(_PFS+"p1_4.webp"),_ri(_PFS+"p2_3.webp"),_ri(_PFS+"p4_4.webp"),_ri(_PFS+"p5_1.webp")],
@@ -226,6 +253,12 @@
 
   /* Fotos do produto (secao embaixo): lavadoras 4 fotos; ferramentas - ocultar */
   var PRODUCT_PHOTOS = {
+    20: [
+      _im(_PP + 'mondial-airfryer-oven-12l-1.jpg', 'Air Fryer Mondial frente'),
+      _im(_PP + 'mondial-airfryer-oven-12l-2.jpg', 'Air Fryer Mondial acessórios'),
+      _im(_PP + 'mondial-airfryer-oven-12l-3.jpg', 'Air Fryer Mondial painel'),
+      _im(_PP + 'mondial-airfryer-oven-12l-4.jpg', 'Air Fryer Mondial 3 níveis')
+    ],
     14:[_im(_PP+"vonder-lavadora-lav1200.webp","LAV1200 frente"),_im(_PFS+"p2_1.webp","LAV1200 em uso"),_im(_PFS+"p3_1.webp","LAV1200 detalhe"),_im(_PFS+"p4_1.webp","LAV1200 cliente")],
     15:[_im(_PP+"vonder-lavadora-lav1600.webp","LAV1600 frente"),_im(_PFS+"p1_1.webp","LAV1600 em uso"),_im(_PFS+"p2_2.webp","LAV1600 detalhe"),_im(_PFS+"p4_2.webp","LAV1600 cliente")],
     16:[_im(_PP+"vonder-lavadora-lav2000.webp","LAV2000 frente"),_im(_PFS+"p1_3.webp","LAV2000 em uso"),_im(_PFS+"p2_3.webp","LAV2000 detalhe"),_im(_PFS+"p4_3.webp","LAV2000 cliente")],
@@ -2964,6 +2997,31 @@
   /* ============================ CATÁLOGO — páginas de produto por ?id= ============================ */
   const _CP = 'assets/products/';
   const PRODUCTS = {
+    20: {
+      name: 'Fritadeira Air Fryer Forno Oven 12L Mondial AFON-12L-BIN Digital',
+      img: P + 'mondial-airfryer-oven-12l-1.jpg',
+      p: '149,00',
+      old: '822,90',
+      off: '82% OFF',
+      vars: ['127V', '220V'],
+      specs: [
+        ['Marca', 'Mondial'],
+        ['Linha', 'Forno & Air Fryer'],
+        ['Modelo', 'AFON-12L-BIN'],
+        ['Capacidade', '12 Litros'],
+        ['Potência', '2000 W (220V) / 1900 W (127V)'],
+        ['Painel', 'Digital com 10 funções pré-programadas'],
+        ['Timer', '90 minutos com desligamento automático e aviso sonoro'],
+        ['Controle de temperatura', 'Ajustável de 80°C até 200°C'],
+        ['Níveis de altura', '3 níveis para receitas simultâneas'],
+        ['Iluminação interna', 'Sim, com visor amplo transparente'],
+        ['Dimensões', 'Altura 29,5 cm x Largura 28,5 cm x Comprimento 36,5 cm'],
+        ['Peso', '4,8 kg'],
+        ['Acessórios inclusos', '2 assadeiras perfuradas, 1 cesto/assadeira coletora antiaderente, 1 puxador'],
+        ['Voltagem', '127V / 220V']
+      ],
+      desc: 'A Fritadeira Air Fryer Forno Mondial AFON-12L-BI combina as funções de fritura a ar e forno em um equipamento moderno com capacidade total de 12 litros. Projetada para preparos familiares, permite fazer até três receitas simultâneas graças aos seus três níveis de altura e acessórios inclusos. O modelo apresenta painel digital com 10 funções pré-programadas, timer de 90 minutos e controle de temperatura ajustável para máxima precisão culinária. A tecnologia de circulação de ar quente garante resultados rápidos, crocantes e uniformes sem a necessidade de óleo. Conta com visor amplo e iluminação interna para acompanhar o cozimento em tempo real, além de desligamento automático. Acompanha duas assadeiras perfuradas, cesto coletor antiaderente com puxador de segurança.'
+    },
     14: { name: 'Lavadora De Alta Pressão 1200W 1300 Libras LAV1200 Vonder', img: _CP + 'vonder-lavadora-lav1200.webp', p: '60,00', old: '280,00', off: '79% OFF', vars: ['127V', '220V'],
       specs: [['Marca', 'Vonder'], ['Modelo', 'LAV1200'], ['Potência', '1200 W'], ['Pressão máxima', '1300 lbf/pol²'], ['Tipo de motor', 'Universal'], ['Uso indicado', 'Doméstico'], ['Voltagem', '127V / 220V'], ['Itens inclusos', 'Pistola, lança e bico']],
       desc: 'Lavadora de alta pressão Vonder LAV1200 com motor universal de 1200 W e bomba de pressão para limpeza intensa em ambientes residenciais. Acompanha pistola, lança e bico regulável para diferentes tipos de superfície e nível de sujeira.' },
