@@ -134,18 +134,20 @@
   const _rv = (src, poster, dur) => ({ type: 'video', src, poster, thumb: poster, dur });
 
   const REVIEWS = [
-    { rate: 5, country: 'Brasil', when: 'Há 2 semanas', ageDays: 14, likes: 42, text: 'Simplesmente perfeita! Muito espaçosa, cabe um frango inteiro ou forma de bolo com tranquilidade. O painel digital facilita demais e os alimentos ficam crocantes por fora e macios por dentro sem uma gota de óleo.', media: [_ri(_PP+'mondial-airfryer-oven-12l-7.jpg')] },
-    { rate: 5, country: 'Brasil', when: 'Há 3 semanas', ageDays: 21, likes: 28, text: 'Excelente aquisição para a casa. Os três andares permitem fazer carne, batata e legumes de uma vez só. O visor com luz interna ajuda a acompanhar sem precisar abrir e perder calor.', media: [_ri(_PP+'mondial-airfryer-oven-12l-2.jpg')] },
-    { rate: 5, country: 'Brasil', when: 'Há 1 mês', ageDays: 30, likes: 19, text: 'Potência fantástica, aquece super rápido e é muito fácil de limpar graças ao antiaderente das bandejas. Chegou rápido e muito bem embalada.', media: [_ri(_PP+'mondial-airfryer-oven-12l-8.jpg')] },
+    { rate: 5, country: 'Brasil', when: 'Há 2 semanas', ageDays: 14, likes: 42, text: 'Simplesmente perfeita! Muito espaçosa, cabe um frango inteiro ou forma de bolo com tranquilidade. O painel digital facilita demais e os alimentos ficam crocantes por fora e macios por dentro sem uma gota de óleo.', media: [_vid('https://video-static-clips.mms.mlstatic.com/62c82f1f923a3f082b72612d/019f7c8619ab7454b54fc41160e25ad9/preview/preview_019f7c86313675e9a06f7efc79faf759_019f7c861a767a1e8cb8e7efdbc72621.mp4', _PP+'mondial-airfryer-oven-12l-7.jpg', 'Video')] },
+    { rate: 5, country: 'Brasil', when: 'Há 3 semanas', ageDays: 21, likes: 28, text: 'Excelente aquisição para a casa. Os três andares permitem fazer carne, batata e legumes de uma vez só. O visor com luz interna ajuda a acompanhar sem precisar abrir e perder calor.', media: [_vid('https://video-static-clips.mms.mlstatic.com/62c82f1f923a3f082b72612d/019f581b77cc706eb7e7353eabdc6576/preview/preview_019f581be89b7c37a8a5637c4dc69217_019f581b79a97e96b76edaa0114b2fe7.mp4', _PP+'mondial-airfryer-oven-12l-2.jpg', 'Video')] },
+    { rate: 5, country: 'Brasil', when: 'Há 1 mês', ageDays: 30, likes: 19, text: 'Potência fantástica, aquece super rápido e é muito fácil de limpar graças ao antiaderente das bandejas. Chegou rápido e muito bem embalada.', media: [_vid('https://video-static-clips.mms.mlstatic.com/62c82f1f923a3f082b72612d/019e8f3585fb7cd78e3ada4714201f1b/preview/preview_019e8f6a2b617e9a90cd9490cfb124f3_019e8f3587237a6fb3e75825b2e24bfe.mp4', _PP+'mondial-airfryer-oven-12l-8.jpg', 'Video')] },
     { rate: 5, country: 'Brasil', when: 'Há 1 mês', ageDays: 35, likes: 15, text: 'Adorei! Substituiu meu forno convencional e a air fryer pequena. Muito prática, bonita e moderna com acabamento em inox.' },
     { rate: 5, country: 'Brasil', when: 'Há 2 meses', ageDays: 60, likes: 11, text: 'Melhor custo-benefício disparado. As funções pré-programadas do painel funcionam perfeitamente e ela não faz quase nada de barulho. Super recomendo a todos.' }
 ];
 
   // Lista plana de toda a mídia (na ordem dos comentários) para a faixa "Opiniões com fotos".
   const REVIEW_MEDIA = [
-  _ri(_PP+'mondial-airfryer-oven-12l-7.jpg'),
-  _ri(_PP+'mondial-airfryer-oven-12l-2.jpg'),
-  _ri(_PP+'mondial-airfryer-oven-12l-8.jpg')
+  _vid('https://video-static-clips.mms.mlstatic.com/62c82f1f923a3f082b72612d/019f7c8619ab7454b54fc41160e25ad9/preview/preview_019f7c86313675e9a06f7efc79faf759_019f7c861a767a1e8cb8e7efdbc72621.mp4', _PP+'mondial-airfryer-oven-12l-7.jpg', 'Video Review 1'),
+  _vid('https://video-static-clips.mms.mlstatic.com/62c82f1f923a3f082b72612d/019f581b77cc706eb7e7353eabdc6576/preview/preview_019f581be89b7c37a8a5637c4dc69217_019f581b79a97e96b76edaa0114b2fe7.mp4', _PP+'mondial-airfryer-oven-12l-2.jpg', 'Video Review 2'),
+  _vid('https://video-static-clips.mms.mlstatic.com/62c82f1f923a3f082b72612d/019e8f3585fb7cd78e3ada4714201f1b/preview/preview_019e8f6a2b617e9a90cd9490cfb124f3_019e8f3587237a6fb3e75825b2e24bfe.mp4', _PP+'mondial-airfryer-oven-12l-8.jpg', 'Video Review 3'),
+  _vid('https://video-static-clips.mms.mlstatic.com/62c82f1f923a3f082b72612d/01a04e8b4d66743bbef681c1cdb4501f/preview/preview_01a04e8b8f3f7ac99a51ceffbec682e7_01a04e8b4e3173da8ce11338d7f4753d.mp4', _PP+'mondial-airfryer-oven-12l-4.jpg', 'Video Review 4'),
+  _ri(_PP+'mondial-airfryer-oven-12l-1.jpg')
 ];
   let currentReviewMedia = REVIEW_MEDIA;
 
