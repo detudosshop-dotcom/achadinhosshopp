@@ -1076,70 +1076,64 @@ h1,h2,h3,h4,p,figure{margin:0;font-weight:400;font-size:inherit;}
 
 
 
+
 /* NOVO ESTILO SEGURO MERCADO LIVRE - REFINADO */
 .cho-seguro {
-  position: absolute; inset: 0; background: #fff; z-index: 200;
-  display: flex; flex-direction: column; overflow-y: auto;
+  position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 9999;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  padding: 0;
 }
-@media(min-width: 768px) {
-  .cho-seguro { background: #ededed; padding: 40px 20px; align-items: center; }
-}
-.cho-seguro__dialog {
-  background: #fff; width: 100%; display: flex; flex-direction: column;
-}
-@media(min-width: 768px) {
-  .cho-seguro__dialog { max-width: 440px; border-radius: 8px; box-shadow: 0 1px 2px 0 rgba(0,0,0,.15); }
+@media(min-width: 600px) {
+  .cho-seguro { justify-content: center; padding: 20px; }
 }
 
-/* HEADER */
+.cho-seguro__dialog {
+  background: #fff; width: 100%; max-width: 480px; display: flex; flex-direction: column;
+  border-radius: 16px 16px 0 0; overflow: hidden; max-height: 90vh;
+}
+@media(min-width: 600px) {
+  .cho-seguro__dialog { border-radius: 16px; }
+}
+
 .cho-seguro__header {
-  padding: 32px 24px 16px;
-  display: flex; flex-direction: column; align-items: flex-start;
+  background: #FFE600; padding: 20px 24px; text-align: center; position: relative;
 }
 .cho-seguro__shield {
-  width: 32px; height: 32px; margin-bottom: 12px;
+  display: none;
 }
 .cho-seguro__title {
-  font-size: 20px; font-weight: 600; color: #333; margin: 0 0 8px; line-height: 1.25;
+  font-size: 17px; font-weight: 700; color: #111; margin: 0 0 4px; display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.cho-seguro__title::before {
+  content: ''; display: inline-block; width: 12px; height: 16px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="%23111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>') no-repeat center;
 }
 .cho-seguro__sub {
-  font-size: 14px; color: #666; margin: 0 0 12px; line-height: 1.4;
+  font-size: 14px; color: #333; margin: 0;
 }
-.cho-seguro__details {
-  font-size: 14px; color: #3483FA; font-weight: 600; text-decoration: none;
-}
+.cho-seguro__details { display: none; }
 
-/* BODY */
 .cho-seguro__body {
-  padding: 0 24px;
+  padding: 16px 20px; overflow-y: auto; flex: 1;
 }
-.cho-seguro__prod {
-  display: flex; align-items: center; gap: 12px; padding: 0 0 24px;
-}
-.cho-seguro__prod-img-wrap {
-  width: 44px; height: 44px; border-radius: 50%; border: 2px solid #00a650;
-  display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden; padding: 4px;
-}
-.cho-seguro__prod-img img { width: 100%; height: 100%; object-fit: contain; }
-.cho-seguro__prod-info { display: flex; flex-direction: column; }
-.cho-seguro__prod-label { font-size: 12px; color: #00a650; font-weight: 600; margin-bottom: 2px; }
-.cho-seguro__prod-name { font-size: 14px; color: #333; }
 
-/* OPÇÕES */
+.cho-seguro__prod { display: none; }
+
 .cho-seguro__opts {
   display: flex; flex-direction: column; gap: 12px;
 }
 .cho-seguro__opt {
-  display: flex; align-items: center; gap: 16px; padding: 18px 16px;
-  border: 1px solid #e5e5e5; border-radius: 8px; cursor: pointer; position: relative;
-  background: #fff; transition: all 0.2s ease;
+  display: flex; align-items: center; gap: 12px; padding: 12px;
+  border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; position: relative;
+  background: #fff;
 }
 .cho-seguro__opt.is-sel {
-  border-color: #3483FA; border-width: 2px; padding: 17px 15px; /* Compensa o 1px a mais de borda */
+  border-color: #3483FA; border-width: 1.5px; padding: 11.5px;
 }
+
 .cho-seguro__opt-radio {
-  width: 22px; height: 22px; border-radius: 50%; border: 2px solid #ccc;
-  display: flex; align-items: center; justify-content: center; flex: none;
+  width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ccc; flex: none;
+  display: flex; align-items: center; justify-content: center; background: #fff;
 }
 .cho-seguro__opt.is-sel .cho-seguro__opt-radio { border-color: #3483FA; }
 .cho-seguro__opt-radio-dot {
@@ -1147,30 +1141,37 @@ h1,h2,h3,h4,p,figure{margin:0;font-weight:400;font-size:inherit;}
 }
 .cho-seguro__opt.is-sel .cho-seguro__opt-radio-dot { display: block; }
 
-.cho-seguro__opt-content {
-  flex: 1; display: flex; justify-content: space-between; align-items: center;
+/* Adiciona a thumb do produto para imitar o kit */
+.cho-seguro__opt::before {
+  content: ''; display: inline-block; width: 60px; height: 60px; flex: none;
+  background: url('assets/products/mondial-airfryer-oven-12l-1.jpg') no-repeat center;
+  background-size: contain; margin-right: 4px;
 }
-.cho-seguro__opt-label { font-size: 15px; color: #333; }
-.cho-seguro__opt-price { text-align: right; display: flex; flex-direction: column; align-items: flex-end; }
-.cho-seguro__opt-price-old { font-size: 12px; color: #999; text-decoration: line-through; }
-.cho-seguro__opt-price-new { font-size: 15px; color: #333; font-weight: 600; }
+
+.cho-seguro__opt-content {
+  flex: 1; display: flex; flex-direction: column; justify-content: center;
+}
+.cho-seguro__opt-label { font-size: 14px; color: #333; margin-bottom: 2px; }
+.cho-seguro__opt-price { display: flex; gap: 8px; align-items: center; }
+.cho-seguro__opt-price-old { font-size: 13px; color: #999; text-decoration: line-through; }
+.cho-seguro__opt-price-new { font-size: 15px; color: #111; font-weight: 700; }
 
 .cho-seguro__badge {
-  position: absolute; top: -10px; right: 16px; background: #00a650; color: #fff;
-  font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px;
+  position: absolute; top: -8px; right: 12px; background: #111; color: #fff;
+  font-size: 10px; font-weight: 800; padding: 2px 6px; text-transform: uppercase;
 }
 
-/* FOOTER */
 .cho-seguro__foot {
-  padding: 24px; display: flex; flex-direction: column; gap: 8px; margin-top: 8px;
+  padding: 16px 20px 24px; display: flex; flex-direction: column; gap: 10px;
+  border-top: 1px solid #eee; background: #fff; flex: none;
 }
 .cho-seguro__add {
-  background: #3483FA; color: #fff; border: none; padding: 16px; width: 100%;
-  border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s;
+  background: #3483FA; color: #fff; border: none; padding: 14px;
+  border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s;
 }
 .cho-seguro__add:hover { background: #2968c8; }
 .cho-seguro__skip {
-  background: transparent; color: #3483FA; border: none; padding: 16px; width: 100%;
-  border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s;
+  background: #eef3ff; color: #3483FA; border: none; padding: 14px;
+  border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s;
 }
-.cho-seguro__skip:hover { background: rgba(52,131,250,0.05); }
+.cho-seguro__skip:hover { background: #dce5fa; }
