@@ -133,49 +133,21 @@
   const _ri = src => ({ type: 'img', src, thumb: src, w: 800, h: 800 });
   const _rv = (src, poster, dur) => ({ type: 'video', src, poster, thumb: poster, dur });
 
-  const REVIEWS = [
-    { rate: 5, country: 'Brasil', when: 'Há 2 meses', ageDays: 60, likes: 2100,
-      text: 'Excelente Air Fryer, muito espaçosa, veio com formas antiaderentes e assa super rápido. É uma fritadeira muito boa, super recomendo. Pelo preço que paguei aqui vale muito, ainda mais por ser Mondial — marca conhecida e de confiança.',
-      media: [ _rv(RV + 'videos/v1.mp4', RVS + 'v1_poster.webp', '0:26'), _ri(RVS + 'p1_1.webp'), _ri(RVS + 'p1_3.webp'), _ri(RVS + 'p1_4.webp'), _ri(RVS + 'p1_5.webp') ] },
-    { rate: 5, country: 'Brasil', when: 'Há 3 meses', ageDays: 90, likes: 1200,
-      text: 'Entrega rápida, chegou sem nenhuma avaria! Já usamos 2x para lavar os carros, é muito forte, jato bem potente, excelente! Custo-benefício ótimo, marca ótima, preço ótimo, recomendo a aquisição — tudo funciona perfeitamente.',
-      media: [ _rv(RV + 'videos/v2.mp4', RVS + 'v2_poster.webp', '0:19'), _ri(RVS + 'p2_1.webp'), _ri(RVS + 'p2_2.webp'), _ri(RVS + 'p2_3.webp') ] },
-    { rate: 5, country: 'Brasil', when: 'Há 4 meses', ageDays: 120, likes: 980,
-      text: 'Vendedor postou rápido e chegou rápido! Geralmente as entregas demoram uma semana ou mais, essa chegou em 4 dias. Máquina muito boa, gatilho macio, conexões leves e uma boa pressão da água. Gostei bastante!',
-      media: [ _rv(RV + 'videos/v3.mp4', RVS + 'v3_poster.webp', '0:08'), _ri(RVS + 'p3_1.webp') ] },
-    { rate: 5, country: 'Brasil', when: 'Há 5 meses', ageDays: 150, likes: 3100,
-      text: 'A Air Fryer veio dentro do prazo e sem avarias! No teste que fiz foi ótima, esquenta super rápido e cabe muita coisa. Excelente custo-benefício! Recomendo o produto e o vendedor.',
-      media: [ _rv(RV + 'videos/v4.mp4', RVS + 'v4_poster.webp', '0:36'), _ri(RVS + 'p4_1.webp'), _ri(RVS + 'p4_2.webp'), _ri(RVS + 'p4_3.webp'), _ri(RVS + 'p4_4.webp'), _ri(RVS + 'p4_5.webp') ] },
-    { rate: 5, country: 'Brasil', when: 'Há 6 meses', ageDays: 180, likes: 321,
-      text: 'Amei a minha compra, chegou super rápido e o produto é igual à descrição do vídeo. Super recomendo!',
-      media: [ _rv(RV + 'videos/v5.mp4', RVS + 'v5_poster.webp', '0:09'), _ri(RVS + 'p5_1.webp') ] },
-    { rate: 5, country: 'Brasil', when: 'Há 7 meses', ageDays: 210, likes: 482,
-      text: 'Chegou num prazo bom, fácil de montar, boa pressão e funciona perfeitamente. Recomendo!',
-      media: [ _rv(RV + 'videos/v6.mp4', RVS + 'v6_poster.webp', '0:10'), _ri(RVS + 'p6_1.webp') ] },
-    { rate: 5, country: 'Brasil', when: 'Há 2 meses', ageDays: 64, likes: 418,
-      text: 'Air Fryer excelente! Assei frango e pães de queijo, potência absurda e não gasta óleo. Recomendo!',
-      media: [ _ri(RV + 'review-prod1.webp') ] },
-    { rate: 5, country: 'Brasil', when: 'Há 3 meses', ageDays: 96, likes: 1300,
-      text: 'Fritadeira incrível, preparou o jantar inteiro. A qualidade Mondial surpreendeu!',
-      media: [ _ri(RV + 'review-prod2.webp') ] },
-    { rate: 5, country: 'Brasil', when: 'Há 4 meses', ageDays: 132, likes: 276,
-      text: 'Melhor custo-benefício. Chegou rápido e bem embalado, funciona muito bem.',
-      media: [ _ri(RV + 'review-prod3.webp') ] },
-    { rate: 5, country: 'Brasil', when: 'Há 5 meses', ageDays: 158, likes: 893,
-      text: 'Veio tudo completo e bem embalado! Qualidade de verdade. Recomendo demais.',
-      media: [ _ri(RV + 'review-prod4.webp') ] },
-    { rate: 5, country: 'Brasil', when: 'Há 1 semana', ageDays: 7, likes: 212,
-      text: 'Chegou rapidinho e o espaço é absurdo pra uma Air Fryer dessa faixa! Assei o frango inteiro em 40 minutos, ficou douradinho e crocante. Recomendo demais!' },
-    { rate: 5, country: 'Brasil', when: 'Há 2 semanas', ageDays: 14, likes: 336,
-      text: 'Comprei pro meu marido de aniversário e ele surtou. Veio bem embalada, sem amassado nenhum. A mangueira é boa, o gatilho firme. Vale cada centavo.' },
-    { rate: 5, country: 'Brasil', when: 'Há 3 semanas', ageDays: 21, likes: 479,
-      text: 'Estava com o pé atrás por causa do preço, mas me surpreendeu MUITO. Já lavei o carro 3x e continua novinha.' },
-    { rate: 4, country: 'Brasil', when: 'Há 1 mês', ageDays: 30, likes: 143,
-      text: 'Boa pressão, compacta e leve. Só achei a mangueira um pouco curta, mas pro preço está ótimo.' }
-  ];
+  const REVIEWS = [ 
+      { rate: 5, country: "Brasil", when: "Ha 2 semanas", ageDays: 14, likes: 42, text: "Simplesmente perfeita! Muito espaçosa, cabe um frango inteiro ou forma de bolo com tranquilidade. O painel digital facilita demais e os alimentos ficam crocantes por fora e macios por dentro sem uma gota de óleo." },
+      { rate: 5, country: "Brasil", when: "Ha 3 semanas", ageDays: 21, likes: 28, text: "Excelente aquisição para a casa. Os três andares permitem fazer carne, batata e legumes de uma vez só. O visor com luz interna ajuda a acompanhar sem precisar abrir e perder calor." },
+      { rate: 5, country: "Brasil", when: "Ha 1 mes", ageDays: 30, likes: 19, text: "Potência fantástica, aquece super rápido e é muito fácil de limpar graças ao antiaderente das bandejas. Chegou rápido e muito bem embalada." },
+      { rate: 5, country: "Brasil", when: "Ha 1 mes", ageDays: 35, likes: 15, text: "Adorei! Substituiu meu forno convencional e a air fryer pequena. Muito prática, bonita e moderna com acabamento em inox." },
+      { rate: 5, country: "Brasil", when: "Ha 2 meses", ageDays: 60, likes: 11, text: "Melhor custo-benefício disparado. As funções pré-programadas do painel touchscreen acertam o ponto certinho de cada alimento." }
+    ];
 
   // Lista plana de toda a mídia (na ordem dos comentários) para a faixa "Opiniões com fotos".
-  const REVIEW_MEDIA = REVIEWS.reduce((a, r) => a.concat(r.media || []), []);
+  const REVIEW_MEDIA = [ 
+      _ri(_PP + 'mondial-airfryer-oven-12l-1.jpg'),
+      _ri(_PP + 'mondial-airfryer-oven-12l-2.jpg'),
+      _ri(_PP + 'mondial-airfryer-oven-12l-3.jpg'),
+      _ri(_PP + 'mondial-airfryer-oven-12l-4.jpg')
+    ];
   let currentReviewMedia = REVIEW_MEDIA;
 
   var PRODUCT_REVIEWS = {
