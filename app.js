@@ -27,7 +27,7 @@
 
   const plural = n => `${n} unidade${n > 1 ? 's' : ''}`;
 
-  let PRODUCT = "Lavadora de Alta Pressão Vonder Leve LAV1300 Amarela e Preta 1200W";
+  let PRODUCT = "Fritadeira Air Fryer Forno Oven 12L Mondial AFON-12L-BIN";
 
   const _im = (url, alt) => ({ thumb: url, full: url, zoom: url, w: 800, h: 800, zw: 1000, zh: 1000, type: 'img', alt });
   const _vid = (src, poster, alt) => ({ thumb: poster, poster: poster, src: src, w: 720, h: 1280, type: 'video', alt });
@@ -38,15 +38,15 @@
   /* Galeria principal — Lavadora Vonder LAV1300 (127V) */
   /* Galeria oficial Mercado Livre - Lavadora Vonder LAV1300 */
   const ML_LAV1300_GALLERY = [
-    _im(P + 'vonder-lav1300-ml-1.jpg', 'Lavadora de alta pressao Vonder Leve LAV1300 amarela e preta 1200W - frente'),
-    _im(P + 'vonder-lav1300-ml-2.jpg', 'Lavadora Vonder LAV1300 - acessorios inclusos'),
-    _im(P + 'vonder-lav1300-ml-3.jpg', 'Lavadora Vonder LAV1300 - detalhes tecnicos'),
-    _im(P + 'vonder-lav1300-ml-4.jpg', 'Lavadora Vonder LAV1300 - motor e especificacoes'),
-    _im(P + 'vonder-lav1300-ml-5.jpg', 'Lavadora Vonder LAV1300 - vista lateral'),
-    _im(P + 'vonder-lav1300-ml-6.jpg', 'Lavadora Vonder LAV1300 - mangueira e pistola'),
-    _im(P + 'vonder-lav1300-ml-7.jpg', 'Lavadora Vonder LAV1300 - dimensoes e peso'),
-    _im(P + 'vonder-lav1300-ml-8.jpg', 'Lavadora Vonder LAV1300 - em uso limpeza'),
-    _im(P + 'vonder-lav1300-ml-9.jpg', 'Lavadora Vonder LAV1300 - embalagem original')
+    _im(P + 'mondial-airfryer-oven-12l-1.jpg', 'Fritadeira Air Fryer Forno Oven 12L Mondial - frente'),
+    _im(P + 'mondial-airfryer-oven-12l-2.jpg', 'Air Fryer Mondial - acessorios inclusos'),
+    _im(P + 'mondial-airfryer-oven-12l-3.jpg', 'Air Fryer Mondial - detalhes tecnicos'),
+    _im(P + 'mondial-airfryer-oven-12l-4.jpg', 'Air Fryer Mondial - motor e especificacoes'),
+    _im(P + 'mondial-airfryer-oven-12l-5.jpg', 'Air Fryer Mondial - vista lateral'),
+    _im(P + 'mondial-airfryer-oven-12l-6.jpg', 'Air Fryer Mondial - mangueira e pistola'),
+    _im(P + 'mondial-airfryer-oven-12l-7.jpg', 'Air Fryer Mondial - dimensoes e peso'),
+    _im(P + 'mondial-airfryer-oven-12l-8.jpg', 'Air Fryer Mondial - em uso limpeza'),
+    _im(P + 'mondial-airfryer-oven-12l-9.jpg', 'Air Fryer Mondial - embalagem original')
   ];
 
   const GAL_127V = ML_LAV1300_GALLERY;
@@ -1088,7 +1088,7 @@
     };
 
     // Só oferece meli+ uma vez e se ele ainda não estiver ativo
-    if (!meliShown && !meliPlusActive) openMeliModal(goToPhase2);
+    goToPhase2();
     else goToPhase2();
   });
 
