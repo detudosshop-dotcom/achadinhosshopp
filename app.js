@@ -90,14 +90,14 @@
   const MAIN_CARD = {
     img: 18, id: MAIN_ID,
     t: 'Lavadora de Alta Pressão Vonder Leve LAV1300 Amarela e Preta 1200W',
-    p: '65,00', old: '225,00', off: '71% OFF', sold: '+16mil vendidos', pix: 1, ship: 1, full: 1
+    p: '68,80', old: '225,00', off: '91% OFF', sold: '+16mil vendidos', pix: 1, ship: 1, full: 1
   };
 
   // Catálogo 1:1 com o zip inicial (nomes, preços e "de/por" exatos).
   const RELATED = [
-    { img: 19, id: 20,  t: 'Fritadeira Air Fryer Forno Oven 12L Mondial AFON-12L-BIN Digital', p: '149,00', old: '822,90', off: '82% OFF', sold: '+5mil vendidos', ship: 1, full: 1 },
+    { img: 19, id: 20,  t: 'Fritadeira Air Fryer Forno Oven 12L Mondial AFON-12L-BIN Digital', p: '68,80', old: '822,90', off: '91% OFF', sold: '+5mil vendidos', ship: 1, full: 1 },
     { img: 1, id: 14,  t: 'Lavadora De Alta Pressão 1200W 1300 Libras LAV1200 Vonder', p: '60,00', old: '280,00', off: '79% OFF', sold: '+200 vendidos', ship: 1 },
-    { img: 2, id: 15,  t: 'Lavadora De Alta Pressão Vonder 1400W LAV 1600 Amarelo', p: '70,00', old: '245,00', off: '71% OFF', sold: '+15mil vendidos', ship: 1 },
+    { img: 2, id: 15,  t: 'Lavadora De Alta Pressão Vonder 1400W LAV 1600 Amarelo', p: '70,00', old: '245,00', off: '91% OFF', sold: '+15mil vendidos', ship: 1 },
     { img: 3, id: 16,  t: 'Lavadora De Alta Pressão LAV 2000 Vonder Cor Amarelo', p: '100,00', old: '358,00', off: '72% OFF', sold: '+1k vendidos', pix: 1, ship: 1 },
     { img: 4, id: 17,  t: 'Kit Lavadora Alta Pressão 1200W + Aspirador Pó e Água Vonder', p: '120,00', old: '400,00', off: '70% OFF', sold: '+500 vendidos', ship: 1, full: 1 },
     { img: 5, id: 8,  t: 'Kit Jogo Ferramentas Maleta 128 Peças Soquetes Chaves Vonder', p: '68,00', old: '300,00', off: '77% OFF', sold: '+180 vendidos', ship: 1 },
@@ -110,11 +110,11 @@
     { img: 12, id: 13, t: 'Serra Mármore Profissional Vonder SMV1300s 1300W', p: '60,00', old: '198,00', off: '70% OFF', sold: '+8k vendidos', ship: 1, full: 1 }
   ];
   const STORE = [
-    { img: 19, id: 20,  t: 'Fritadeira Air Fryer Forno Oven 12L Mondial AFON-12L-BIN Digital', p: '149,00', old: '822,90', off: '82% OFF', sold: '+5mil vendidos', ship: 1, full: 1 },
+    { img: 19, id: 20,  t: 'Fritadeira Air Fryer Forno Oven 12L Mondial AFON-12L-BIN Digital', p: '68,80', old: '822,90', off: '91% OFF', sold: '+5mil vendidos', ship: 1, full: 1 },
     { img: 4, id: 17,  t: 'Kit Lavadora Alta Pressão 1200W + Aspirador Pó e Água Vonder', p: '120,00', old: '400,00', off: '70% OFF', sold: '+500 vendidos', pix: 1, ship: 1 },
     { img: 3, id: 16,  t: 'Lavadora De Alta Pressão LAV 2000 Vonder Cor Amarelo', p: '100,00', old: '358,00', off: '72% OFF', sold: '+1k vendidos', ship: 1 },
     { img: 8, id: 2,  t: 'Inversor Para Solda Eletrodo e TIG IM125 Vonder', p: '78,00', old: '399,00', off: '80% OFF', sold: '+770 vendidos', ship: 1 },
-    { img: 2, id: 15,  t: 'Lavadora De Alta Pressão Vonder 1400W LAV 1600 Amarelo', p: '70,00', old: '245,00', off: '71% OFF', sold: '+15mil vendidos', ship: 1 },
+    { img: 2, id: 15,  t: 'Lavadora De Alta Pressão Vonder 1400W LAV 1600 Amarelo', p: '70,00', old: '245,00', off: '91% OFF', sold: '+15mil vendidos', ship: 1 },
     { img: 5, id: 8,  t: 'Kit Jogo Ferramentas Maleta 128 Peças Vonder', p: '68,00', old: '300,00', off: '77% OFF', sold: '+180 vendidos', ship: 1 },
     { img: 6, id: 12,  t: 'Jogo De Ferramentas Com 163 Peças Vonder', p: '60,00', old: '199,90', off: '70% OFF', sold: '+5 vendidos', ship: 1 },
     { img: 12, id: 13, t: 'Serra Mármore Profissional Vonder SMV1300s 1300W', p: '60,00', old: '198,00', off: '70% OFF', sold: '+8k vendidos', ship: 1 },
@@ -2412,7 +2412,7 @@
      checkout (pula o order bump). */
   function acceptBackOffer() {
     // Combo: LAV1300 (R,00) + Snow Foam Shampoo (R,00) + Bico de brinde = R,00
-    backOffer = { unit: 65.00, qty: 1 };
+    backOffer = { unit: 68.80, qty: 1 };
     extraItems = extraItems.filter(i => !i.gift && !i.isBackFlip);
     extraItems.push(Object.assign({}, BACK_FLIP));
     extraItems.push(Object.assign({}, GIFT_ITEM));
@@ -2999,9 +2999,9 @@
     20: {
       name: 'Fritadeira Air Fryer Forno Oven 12L Mondial AFON-12L-BIN Digital',
       img: P + 'mondial-airfryer-oven-12l-1.jpg',
-      p: '149,00',
+      p: '68,80',
       old: '822,90',
-      off: '82% OFF',
+      off: '91% OFF',
       vars: ['127V', '220V'],
       specs: [
         ['Marca', 'Mondial'],
@@ -3024,7 +3024,7 @@
     14: { name: 'Lavadora De Alta Pressão 1200W 1300 Libras LAV1200 Vonder', img: _CP + 'vonder-lavadora-lav1200.webp', p: '60,00', old: '280,00', off: '79% OFF', vars: ['127V', '220V'],
       specs: [['Marca', 'Vonder'], ['Modelo', 'LAV1200'], ['Potência', '1200 W'], ['Pressão máxima', '1300 lbf/pol²'], ['Tipo de motor', 'Universal'], ['Uso indicado', 'Doméstico'], ['Voltagem', '127V / 220V'], ['Itens inclusos', 'Pistola, lança e bico']],
       desc: 'Lavadora de alta pressão Vonder LAV1200 com motor universal de 1200 W e bomba de pressão para limpeza intensa em ambientes residenciais. Acompanha pistola, lança e bico regulável para diferentes tipos de superfície e nível de sujeira.' },
-    15: { name: 'Lavadora De Alta Pressão Vonder 1400W LAV 1600 Amarelo', img: _CP + 'vonder-lavadora-lav1600.webp', p: '70,00', old: '245,00', off: '71% OFF', vars: ['127V', '220V'],
+    15: { name: 'Lavadora De Alta Pressão Vonder 1400W LAV 1600 Amarelo', img: _CP + 'vonder-lavadora-lav1600.webp', p: '70,00', old: '245,00', off: '91% OFF', vars: ['127V', '220V'],
       specs: [['Marca', 'Vonder'], ['Modelo', 'LAV 1600'], ['Potência', '1400 W'], ['Pressão máxima', '1600 lbf/pol²'], ['Vazão', '6 L/min'], ['Mangueira', '5 metros'], ['Voltagem', '127V / 220V']],
       desc: 'Lavadora de alta pressão Vonder LAV 1600 com motor de 1400 W e sistema que gera mais pressão consumindo menos água. Indicada para limpeza eficiente de veículos, áreas externas, telhados e máquinas, com alta durabilidade para uso doméstico intensivo.' },
     16: { name: 'Lavadora De Alta Pressão LAV 2000 Vonder Cor Amarelo', img: _CP + 'vonder-lavadora-lav2000.webp', p: '100,00', old: '358,00', off: '72% OFF', vars: ['127V', '220V'],
