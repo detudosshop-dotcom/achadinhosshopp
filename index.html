@@ -1315,58 +1315,62 @@ Distribuído por Mondial Oficial — distribuidor autorizado Mondial.</div>
 
     <!-- ===================== TELA DE SEGURO ===================== -->
     <div class="cho-seguro" id="choSeguro" hidden>
-      <div class="cho-seguro__scroll">
-        <h2 class="cho-seguro__title">Adicione um seguro</h2>
-        <p class="cho-seguro__sub">Estenda a garantia de fábrica por mais tempo e proteja seu produto contra falhas mecânicas.</p>
-        <a class="cho-seguro__details" href="#">Ver detalhes</a>
+      <div class="cho-seguro__dialog">
+        <div class="cho-seguro__header">
+          <svg class="cho-seguro__shield" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3483FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h2 class="cho-seguro__title">Quer proteger sua compra?</h2>
+          <p class="cho-seguro__sub">Adicione Garantia Estendida e tenha cobertura contra defeitos funcionais após a garantia de fábrica.</p>
+          <a class="cho-seguro__details" href="#">Como funciona?</a>
+        </div>
 
-        <div class="cho-seguro__prod">
-          <div class="cho-seguro__prod-img-wrap">
-            <div class="cho-seguro__prod-img">
-              <img src="assets/products/mondial-airfryer-oven-12l-1.jpg" width="48" height="48" decoding="async" alt="Air Fryer Mondial 12L">
+        <div class="cho-seguro__body">
+          <div class="cho-seguro__prod">
+            <div class="cho-seguro__prod-img-wrap">
+              <div class="cho-seguro__prod-img">
+                <img src="assets/products/mondial-airfryer-oven-12l-1.jpg" width="48" height="48" decoding="async" alt="Air Fryer Mondial 12L">
+              </div>
             </div>
-            <span class="cho-seguro__prod-chk">✓</span>
+            <div class="cho-seguro__prod-info">
+              <span class="cho-seguro__prod-label">Garantia Estendida para:</span>
+              <span class="cho-seguro__prod-name">Air Fryer Mondial 12L</span>
+            </div>
           </div>
-          <div class="cho-seguro__prod-info">
-            <span class="cho-seguro__prod-label">Garantia Estendida para:</span>
-            <span class="cho-seguro__prod-name">Air Fryer Mondial 12L</span>
+
+          <div class="cho-seguro__opts" id="segOpts">
+            <label class="cho-seguro__opt" data-plan="1ano" data-price="19.90">
+              <div class="cho-seguro__opt-radio"><div class="cho-seguro__opt-radio-dot"></div></div>
+              <div class="cho-seguro__opt-content">
+                <span class="cho-seguro__opt-label">12 meses</span>
+                <span class="cho-seguro__opt-price-new">R$ 19,90</span>
+              </div>
+            </label>
+            <label class="cho-seguro__opt" data-plan="1anoemedio" data-price="29.90">
+              <div class="cho-seguro__opt-radio"><div class="cho-seguro__opt-radio-dot"></div></div>
+              <div class="cho-seguro__opt-content">
+                <span class="cho-seguro__opt-label">18 meses</span>
+                <span class="cho-seguro__opt-price-new">R$ 29,90</span>
+              </div>
+            </label>
+            <label class="cho-seguro__opt is-sel" data-plan="2anos" data-price="39.90">
+              <span class="cho-seguro__badge">RECOMENDADO</span>
+              <div class="cho-seguro__opt-radio"><div class="cho-seguro__opt-radio-dot"></div></div>
+              <div class="cho-seguro__opt-content">
+                <span class="cho-seguro__opt-label">24 meses</span>
+                <div class="cho-seguro__opt-price">
+                  <span class="cho-seguro__opt-price-old">R$ 49,90</span>
+                  <span class="cho-seguro__opt-price-new">R$ 39,90</span>
+                </div>
+              </div>
+            </label>
           </div>
         </div>
 
-        <div class="cho-seguro__opts" id="segOpts">
-          <div class="cho-seguro__opt" data-plan="1ano" data-price="19.90">
-            <div class="cho-seguro__opt-radio"><div class="cho-seguro__opt-radio-dot"></div></div>
-            <span class="cho-seguro__opt-label">1 ano</span>
-            <div class="cho-seguro__opt-price">
-              <span class="cho-seguro__opt-price-new">R$ 19,90</span>
-            </div>
-          </div>
-          <div class="cho-seguro__opt" data-plan="1anoemedio" data-price="29.90">
-            <div class="cho-seguro__opt-radio"><div class="cho-seguro__opt-radio-dot"></div></div>
-            <span class="cho-seguro__opt-label">1 ano e meio</span>
-            <div class="cho-seguro__opt-price">
-              <span class="cho-seguro__opt-price-new">R$ 29,90</span>
-            </div>
-          </div>
-          <div class="cho-seguro__opt is-sel" data-plan="2anos" data-price="39.90">
-            <span class="cho-seguro__badge">RECOMENDADO</span>
-            <div class="cho-seguro__opt-radio"><div class="cho-seguro__opt-radio-dot"></div></div>
-            <span class="cho-seguro__opt-label">2 anos</span>
-            <div class="cho-seguro__opt-price">
-              <span class="cho-seguro__opt-price-old">R$ 49,90</span>
-              <span class="cho-seguro__opt-price-new">R$ 39,90</span>
-              <span class="cho-seguro__opt-save">Economize R$ 10</span>
-            </div>
-          </div>
+        <div class="cho-seguro__foot">
+          <button class="cho-seguro__add" type="button" id="segAdd">Continuar com seguro</button>
+          <button class="cho-seguro__skip" type="button" id="segSkip">Continuar sem seguro</button>
         </div>
       </div>
-
-      <p class="cho-seguro__terms">Ao adicionar, você aceita as <a href="#">Condições gerais</a> e os <a href="#">Termos de cobrança do Prêmio do seguro</a>.</p>
-      <div class="cho-seguro__foot">
-        <button class="cho-seguro__skip" type="button" id="segSkip">Agora não</button>
-        <button class="cho-seguro__add" type="button" id="segAdd">Adicionar</button>
-      </div>
-
+      
       <!-- Painel "Ver detalhes" -->
       <div class="cho-seg-det" id="segDet" hidden>
         <div class="cho-seg-det__head">

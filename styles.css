@@ -1071,3 +1071,86 @@ h1,h2,h3,h4,p,figure{margin:0;font-weight:400;font-size:inherit;}
 .meli-cta:hover { background: #2968c8; }
 .meli-skip { background: none; border: none; color: #3483fa; font-size: 14px; font-weight: 600; cursor: pointer; }
 .meli-skip:hover { text-decoration: underline; }
+
+
+/* NOVO ESTILO SEGURO MERCADO LIVRE */
+.cho-seguro {
+  position: absolute; inset: 0; background: #ededed; z-index: 200;
+  display: flex; flex-direction: column; align-items: center; overflow-y: auto;
+  padding: 0;
+}
+@media(min-width: 768px) {
+  .cho-seguro { padding: 40px 20px; }
+}
+.cho-seguro__dialog {
+  background: #fff; width: 100%; max-width: 420px;
+  display: flex; flex-direction: column;
+}
+@media(min-width: 768px) {
+  .cho-seguro__dialog { border-radius: 6px; box-shadow: 0 1px 2px 0 rgba(0,0,0,.15); }
+}
+.cho-seguro__header {
+  padding: 32px 24px 24px; text-align: center;
+}
+.cho-seguro__shield {
+  margin-bottom: 16px;
+}
+.cho-seguro__title {
+  font-size: 22px; font-weight: 600; color: #333; margin: 0 0 8px;
+}
+.cho-seguro__sub {
+  font-size: 14px; color: #666; margin: 0 0 16px; line-height: 1.4;
+}
+.cho-seguro__details {
+  font-size: 14px; color: #3483FA; font-weight: 600; text-decoration: none;
+}
+.cho-seguro__body {
+  padding: 0 24px;
+}
+.cho-seguro__prod {
+  display: flex; align-items: center; gap: 12px; padding: 16px;
+  background: #f5f5f5; border-radius: 8px; margin-bottom: 24px;
+}
+.cho-seguro__prod-img {
+  width: 48px; height: 48px; background: #fff; border-radius: 4px; border: 1px solid #eee;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.cho-seguro__prod-img img { width: 100%; height: 100%; object-fit: contain; }
+.cho-seguro__prod-info { display: flex; flex-direction: column; }
+.cho-seguro__prod-label { font-size: 12px; color: #666; margin-bottom: 2px; }
+.cho-seguro__prod-name { font-size: 14px; color: #333; font-weight: 600; }
+.cho-seguro__opts {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.cho-seguro__opt {
+  display: flex; align-items: center; gap: 16px; padding: 16px;
+  border: 1px solid #ddd; border-radius: 8px; cursor: pointer; position: relative;
+  transition: all 0.2s;
+}
+.cho-seguro__opt.is-sel {
+  border-color: #3483FA; background: #f0f4ff; border-width: 2px; padding: 15px;
+}
+.cho-seguro__opt-content {
+  flex: 1; display: flex; justify-content: space-between; align-items: center;
+}
+.cho-seguro__opt-label { font-size: 16px; color: #333; font-weight: 600; }
+.cho-seguro__opt-price { text-align: right; }
+.cho-seguro__opt-price-old { font-size: 12px; color: #999; text-decoration: line-through; display: block; }
+.cho-seguro__opt-price-new { font-size: 16px; color: #333; font-weight: 600; }
+.cho-seguro__badge {
+  position: absolute; top: -10px; left: 16px; background: #00a650; color: #fff;
+  font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px;
+}
+.cho-seguro__foot {
+  padding: 24px; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;
+}
+.cho-seguro__add {
+  background: #3483FA; color: #fff; border: none; padding: 14px;
+  border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.2s;
+}
+.cho-seguro__add:hover { background: #2968c8; }
+.cho-seguro__skip {
+  background: transparent; color: #3483FA; border: none; padding: 14px;
+  border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.2s;
+}
+.cho-seguro__skip:hover { background: rgba(52,131,250,0.1); }
