@@ -1089,7 +1089,6 @@
 
     // Só oferece meli+ uma vez e se ele ainda não estiver ativo
     goToPhase2();
-    else goToPhase2();
   });
 
   // Fase 2 (submit): valida dados pessoais → avança para pagamento
