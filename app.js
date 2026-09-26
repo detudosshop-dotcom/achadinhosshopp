@@ -133,21 +133,20 @@
   const _ri = src => ({ type: 'img', src, thumb: src, w: 800, h: 800 });
   const _rv = (src, poster, dur) => ({ type: 'video', src, poster, thumb: poster, dur });
 
-  const REVIEWS = [ 
-      { rate: 5, country: "Brasil", when: "Ha 2 semanas", ageDays: 14, likes: 42, text: "Simplesmente perfeita! Muito espaçosa, cabe um frango inteiro ou forma de bolo com tranquilidade. O painel digital facilita demais e os alimentos ficam crocantes por fora e macios por dentro sem uma gota de óleo." },
-      { rate: 5, country: "Brasil", when: "Ha 3 semanas", ageDays: 21, likes: 28, text: "Excelente aquisição para a casa. Os três andares permitem fazer carne, batata e legumes de uma vez só. O visor com luz interna ajuda a acompanhar sem precisar abrir e perder calor." },
-      { rate: 5, country: "Brasil", when: "Ha 1 mes", ageDays: 30, likes: 19, text: "Potência fantástica, aquece super rápido e é muito fácil de limpar graças ao antiaderente das bandejas. Chegou rápido e muito bem embalada." },
-      { rate: 5, country: "Brasil", when: "Ha 1 mes", ageDays: 35, likes: 15, text: "Adorei! Substituiu meu forno convencional e a air fryer pequena. Muito prática, bonita e moderna com acabamento em inox." },
-      { rate: 5, country: "Brasil", when: "Ha 2 meses", ageDays: 60, likes: 11, text: "Melhor custo-benefício disparado. As funções pré-programadas do painel touchscreen acertam o ponto certinho de cada alimento." }
-    ];
+  const REVIEWS = [
+    { rate: 5, country: 'Brasil', when: 'Há 2 semanas', ageDays: 14, likes: 42, text: 'Simplesmente perfeita! Muito espaçosa, cabe um frango inteiro ou forma de bolo com tranquilidade. O painel digital facilita demais e os alimentos ficam crocantes por fora e macios por dentro sem uma gota de óleo.', media: [_ri(_PFS+'airfryer_rev3.jpg')] },
+    { rate: 5, country: 'Brasil', when: 'Há 3 semanas', ageDays: 21, likes: 28, text: 'Excelente aquisição para a casa. Os três andares permitem fazer carne, batata e legumes de uma vez só. O visor com luz interna ajuda a acompanhar sem precisar abrir e perder calor.', media: [_ri(_PFS+'airfryer_rev2.jpg')] },
+    { rate: 5, country: 'Brasil', when: 'Há 1 mês', ageDays: 30, likes: 19, text: 'Potência fantástica, aquece super rápido e é muito fácil de limpar graças ao antiaderente das bandejas. Chegou rápido e muito bem embalada.', media: [_ri(_PFS+'airfryer_rev1.jpg')] },
+    { rate: 5, country: 'Brasil', when: 'Há 1 mês', ageDays: 35, likes: 15, text: 'Adorei! Substituiu meu forno convencional e a air fryer pequena. Muito prática, bonita e moderna com acabamento em inox.' },
+    { rate: 5, country: 'Brasil', when: 'Há 2 meses', ageDays: 60, likes: 11, text: 'Melhor custo-benefício disparado. As funções pré-programadas do painel funcionam perfeitamente e ela não faz quase nada de barulho. Super recomendo a todos.' }
+];
 
   // Lista plana de toda a mídia (na ordem dos comentários) para a faixa "Opiniões com fotos".
-  const REVIEW_MEDIA = [ 
-      _ri(_PP + 'mondial-airfryer-oven-12l-1.jpg'),
-      _ri(_PP + 'mondial-airfryer-oven-12l-2.jpg'),
-      _ri(_PP + 'mondial-airfryer-oven-12l-3.jpg'),
-      _ri(_PP + 'mondial-airfryer-oven-12l-4.jpg')
-    ];
+  const REVIEW_MEDIA = [
+  _ri(_PFS+'airfryer_rev3.jpg'),
+  _ri(_PFS+'airfryer_rev2.jpg'),
+  _ri(_PFS+'airfryer_rev1.jpg')
+];
   let currentReviewMedia = REVIEW_MEDIA;
 
   var PRODUCT_REVIEWS = {
