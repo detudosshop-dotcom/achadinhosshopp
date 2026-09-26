@@ -1031,6 +1031,7 @@ h1,h2,h3,h4,p,figure{margin:0;font-weight:400;font-size:inherit;}
   .hdr,.foot,.modal,.toast,.carousel__arrow,.buy-actions,.skip-link{display:none !important;}
 
 
+}
 /* Meli+ Upsell Modal */
 #meliModal { display: none; }
 #meliModal.is-open {
